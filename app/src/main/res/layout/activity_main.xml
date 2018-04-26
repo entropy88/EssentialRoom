@@ -6,9 +6,10 @@
     >
 
     <TextView
+        android:id="@+id/label1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add object to database"
+        android:text="Create new object"
         />
 
     <EditText
@@ -35,6 +36,23 @@
         android:id="@+id/btn_add_object"
         android:text="create object and add it to the database"/>
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recyclerView"
+        android:background="@color/colorPrimary"/>
+
+
+    </ScrollView>
+
+
     <TextView
         android:id="@+id/tvShowAllRecords"
         android:layout_height="wrap_content"
@@ -43,6 +61,7 @@
         android:background="@android:color/holo_blue_light"/>
 
     <TextView
+        android:id="@+id/label2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search object in the database by field1 value"
@@ -62,16 +81,18 @@
         android:text="search the database by field one value"/>
 
     <TextView
+        android:id="@+id/label3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Results from search"
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_search_results"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:id="@+id/tv_search_results"
-        android:background="@android:color/holo_blue_light"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/label3"
+        android:background="@color/colorPrimary" />
 
 </LinearLayout>

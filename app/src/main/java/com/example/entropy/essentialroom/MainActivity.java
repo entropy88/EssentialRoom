@@ -3,15 +3,17 @@ package com.example.entropy.essentialroom;
 import android.arch.persistence.room.Room;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity {
     MyRoomDatabase myRoomDatabase;
@@ -43,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build();
+
+        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        List<CustomObject> customObjectList = myRoomDatabase.customObjectDao().getObjects();
+        CustomObjectsAdapter adapter= new CustomObjectsAdapter(customObjectList);
+        recyclerView.setAdapter(adapter);
 
         addObjectBTN.setOnClickListener(new View.OnClickListener() {
             @Override
