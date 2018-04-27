@@ -4,7 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+<ScrollView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="8dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/label1"
         android:layout_width="wrap_content"
@@ -43,11 +51,7 @@
         android:layout_weight="1"
         >
     
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        android:background="@color/colorPrimary"/>
+
 
 
     </ScrollView>
@@ -95,4 +99,41 @@
         android:layout_below="@+id/label3"
         android:background="@color/colorPrimary" />
 
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/edt_delete_by_field_one"
+            android:hint="field one value"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_delete_object"
+        android:text="delete object field one value"/>
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deletion status"
+        />
+
+    <TextView
+        android:id="@+id/tv_show_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btn_show_all_records"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="show all records"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView"
+            android:background="@color/colorPrimary"/>
+    </LinearLayout>
+</ScrollView>
 </LinearLayout>

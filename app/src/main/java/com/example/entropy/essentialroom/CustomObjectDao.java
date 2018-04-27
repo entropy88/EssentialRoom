@@ -17,4 +17,8 @@ public interface CustomObjectDao {
 
     @Query("select* from customObjects where fieldOne==:userQuery")
     CustomObject findCustomObjectByFieldOne(String userQuery);
+
+    @Query ("delete from customObjects where fieldOne==:stringDelete")
+    void deleteCustomOnjectByFieldOne(String stringDelete);
+
 }
